@@ -21,7 +21,7 @@
           // Set up the initial state of the visualization
           create: function(element, config) {
               var css = element.innerHTML = `<div id="transposed_table"></div>`;
-              $("head").append("<link rel='stylesheet' href='https://raw.githubusercontent.com/woltapp/looker-viz-transposed-table/master/style.css' type='text/css' media='screen'>");
+              $("head").append("<link rel='stylesheet' href='https://gitcdn.xyz/cdn/woltapp/looker-viz-transposed-table/master/style.css' type='text/css' media='screen'>");
 
           },
           // Render in response to the data or settings changing
