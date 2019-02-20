@@ -10,11 +10,11 @@ looker.plugins.visualizations.add({
             display: "select",
             section: "Style",
             values: [{
-                "Full Width": "fitColumns"
+                "Squeeze": "fitColumns"
             }, {
-                "Fit": "fitDataFill"
+                "Full Width": "fitDataFill"
             }],
-            default: "fitColumns"
+            default: "fitDataFill"
         }
     },
 
