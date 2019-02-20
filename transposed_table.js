@@ -34,12 +34,6 @@ looker.plugins.visualizations.add({
         console.log("config", config);
         console.log("queryResponse", queryResponse);
 
-
-        // destory old viz if already exists
-        if (document.querySelector("#transposed_table .tabulator")) {
-            document.querySelector("#transposed_table .tabulator").remove()
-        }
-
         // add measures as initial column
         var clmns = [{
             title: "",
@@ -90,7 +84,6 @@ looker.plugins.visualizations.add({
 
         // add data to the table
         var tbl = new Tabulator("#transposed_table", {
-            tooltipsHeader: true,
             tooltips: true,
             layout: config.fill_type || "fitDataFill",
             columns: clmns,
