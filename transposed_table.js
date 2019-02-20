@@ -6,23 +6,24 @@
         // Choose a color - one of our options
         options: {
             fill_type: {
-                type: 'string',
-                label: 'Fill Style',
-                display: 'select',
-                section: 'Style',
+                type: "string",
+                label: "Fill Style",
+                display: "select",
+                section: "Style",
                 values: [{
                     "Full Width": "fitColumns"
                 }, {
                     "Fit": "fitDataFill"
                 }],
-                default: 'fitColumns'
+                default: "fitColumns"
             }
         },
 
         // Set up the initial state of the visualization
         create: function(element, config) {
-            var css = element.innerHTML = `<div id="transposed_table"></div>`;
-            document.querySelector('head').innerHTML += "<link rel='stylesheet' href='https://gitcdn.xyz/cdn/woltapp/looker-viz-transposed-table/master/style.css' type='text/css' media='screen'>";
+            var css = element.innerHTML = "<div id='transposed_table'></div>";
+            document.querySelector("head").innerHTML += "<link rel='stylesheet' href='https://gitcdn.xyz/cdn/woltapp/looker-viz-transposed-table/master/style.css' type='text/css' media='screen'>";
+            document.querySelector("head").innerHTML += "<link rel='stylesheet' href='https://unpkg.com/tabulator-tables@4.2.1/dist/css/tabulator.min.css' type='text/css' media='screen'>";
         },
         // Render in response to the data or settings changing
         update: function(data, element, config, queryResponse) {
