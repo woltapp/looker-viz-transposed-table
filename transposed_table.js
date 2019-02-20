@@ -23,6 +23,7 @@ looker.plugins.visualizations.add({
         var tabulator_container = document.createElement("div")
         tabulator_container.setAttribute("id", "transposed_table");
         element.appendChild(tabulator_container);
+        document.querySelector("head").innerHTML += "<style type='text/css'>html, body, #vis {font-family: Open Sans,Helvetica,Arial,sans-serif; font-size: 14px;}</style>"
         document.querySelector("head").innerHTML += "<link rel='stylesheet' href='https://gitcdn.xyz/cdn/woltapp/looker-viz-transposed-table/master/style.css' type='text/css' media='screen'>";
         document.querySelector("head").innerHTML += "<link rel='stylesheet' href='https://unpkg.com/tabulator-tables@4.2.1/dist/css/tabulator.min.css' type='text/css' media='screen'>";
     },
@@ -64,13 +65,14 @@ looker.plugins.visualizations.add({
         }
 
         var rws = [];
-        // loop through the measures that we need to transpose
-        for (var i = 0; i < queryResponse.fields.measure_like.length; i++) {
-            measure = queryResponse.fields.measure_like[i];
+        measures_with_table_calculations = queryResponse.fields.measure_like.concat(queryResponse.fields.table_calculations)
+            // loop through the measures that we need to transpose
+        for (var i = 0; i < measures_with_table_calculations.length; i++) {
+            measure = measures_with_table_calculations[i];
 
             // create a row
             var rw = {
-                measure: measure.label_short
+                measure: measure.label_short || measure.label
             };
 
             // for each dimension, set the measure value
@@ -89,6 +91,7 @@ looker.plugins.visualizations.add({
 
         // add data to the table
         var tbl = new Tabulator("#transposed_table", {
+            tooltipsHeader: true,
             layout: config.fill_type,
             columns: clmns,
             data: rws,
