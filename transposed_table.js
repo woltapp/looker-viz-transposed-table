@@ -23,7 +23,7 @@ looker.plugins.visualizations.add({
         var tabulator_container = document.createElement("div")
         tabulator_container.setAttribute("id", "transposed_table");
         element.appendChild(tabulator_container);
-        document.querySelector("head").innerHTML += "<style type='text/css'>html, body, #vis {font-family: Open Sans,Helvetica,Arial,sans-serif; font-size: 14px; .tabulator-row {min-height: 28px;}}</style>"
+        document.querySelector("head").innerHTML += "<style type='text/css'>html, body, #vis {font-family: Open Sans,Helvetica,Arial,sans-serif; font-size: 14px;}</style>"
         document.querySelector("head").innerHTML += "<link rel='stylesheet' href='https://unpkg.com/tabulator-tables@4.2.1/dist/css/tabulator_site.min.css' type='text/css' media='screen'>";
     },
     // Render in response to the data or settings changing
