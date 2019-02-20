@@ -37,8 +37,8 @@
 
 
             // destory old viz if already exists
-            if (document.querySelector("#transposed_table").classList.contains("tabulator")) {
-                document.querySelector("#transposed_table.tabulator").remove()
+            if (document.querySelector("#transposed_table .tabulator")) {
+                document.querySelector("#transposed_table .tabulator").remove()
             }
 
             // add measures as initial column
