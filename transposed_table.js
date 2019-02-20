@@ -92,7 +92,7 @@ looker.plugins.visualizations.add({
         var tbl = new Tabulator("#transposed_table", {
             tooltipsHeader: true,
             tooltips: true,
-            layout: config.fill_type,
+            layout: config.fill_type || "fitDataFill",
             columns: clmns,
             data: rws,
             movableColumns: true
