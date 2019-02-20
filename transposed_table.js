@@ -21,7 +21,9 @@
 
         // Set up the initial state of the visualization
         create: function(element, config) {
-            var css = element.innerHTML = "<div id='transposed_table'></div>";
+            var tabulator_container = document.createElement("div")
+            tabulator_container.setAttribute("id", "transposed_table");
+            element.appendChild(tabulator_container);
             document.querySelector("head").innerHTML += "<link rel='stylesheet' href='https://gitcdn.xyz/cdn/woltapp/looker-viz-transposed-table/master/style.css' type='text/css' media='screen'>";
             document.querySelector("head").innerHTML += "<link rel='stylesheet' href='https://unpkg.com/tabulator-tables@4.2.1/dist/css/tabulator.min.css' type='text/css' media='screen'>";
         },
